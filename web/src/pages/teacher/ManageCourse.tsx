@@ -64,7 +64,6 @@ export default function ManageCourse() {
 
     try {
       await api.post('/lessons/upload', form, {
-        headers: { 'Content-Type': 'multipart/form-data' },
         onUploadProgress: (e) => {
           if (e.total) setUploadProgress(Math.round((e.loaded / e.total) * 100))
         },

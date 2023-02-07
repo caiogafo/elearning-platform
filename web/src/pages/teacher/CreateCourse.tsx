@@ -30,9 +30,7 @@ export default function CreateCourse() {
     if (thumbnail) form.append('thumbnail', thumbnail)
 
     try {
-      const { data } = await api.post('/courses', form, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
+      const { data } = await api.post('/courses', form)
       toast.success('Curso criado com sucesso!')
       navigate(`/teacher/courses/${data.id}`)
     } catch (err: any) {
